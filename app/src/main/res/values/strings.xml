@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Telalogin</string>
+    <string name="lbl_ok">OK</string>
+    <string name="lbl_fechar">Fechar</string>
+</resources>
