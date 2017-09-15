@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText senha;
     private Button buttonOk;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,5 +46,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mensagem("Login ou senha incorretos");
         }
 
+    }
+
+    public void escrita(){
+
+        SharedPreferences vrshared = getSharedPreferences("login", MODE_PRIVATE);
+
+        SharedPreferences.Editor vrEditor = vrshared.edit();
+        vrEditor.putString("senha", senha.toString());
+        vrEditor.commit(); //Salvar
+    }
+
+    public void leitura(){
+        SharedPreferences vrshared = getSharedPreferences("login", MODE_PRIVATE);
+
+        String v = vrshared.getString("senha", Integer.toString(RESULT_CANCELED));
     }
 }
