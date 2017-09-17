@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText login;
     private EditText senha;
     private Button buttonOk;
+    private Button buttonescrita;
+    private Button buttonleitura;
 
 
     @Override
@@ -23,8 +25,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         login = (EditText)findViewById(R.id.editValor);
         senha = (EditText)findViewById(R.id.editValor2);
         buttonOk = (Button)findViewById(R.id.buttonOk);
+        buttonescrita = (Button)findViewById(R.id.buttonescrita);
+        buttonleitura = (Button)findViewById(R.id.buttonleitura);
 
         buttonOk.setOnClickListener(this);
+        //buttonescrita.setOnClickListener(this);
+        //buttonleitura.setOnClickListener(this);
     }
 
     public void mensagem (String m){
@@ -48,16 +54,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void escrita(){
+    public void escrita(View view){
 
         SharedPreferences vrshared = getSharedPreferences("login", MODE_PRIVATE);
 
         SharedPreferences.Editor vrEditor = vrshared.edit();
-        vrEditor.putString("senha", senha.toString());
+        vrEditor.putString("senha", senha.getText().toString());
         vrEditor.commit(); //Salvar
     }
 
-    public void leitura(){
+    public void leitura(View view){
         SharedPreferences vrshared = getSharedPreferences("login", MODE_PRIVATE);
 
         String v = vrshared.getString("senha", Integer.toString(RESULT_CANCELED));

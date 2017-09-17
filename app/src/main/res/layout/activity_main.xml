@@ -51,13 +51,26 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
+    <Button
+        android:id="@+id/buttonescrita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:text="Lembrar Senha"
+        android:layout_marginTop="29dp"
+        android:text="Salvar senha"
+        android:onClick="escrita"
         android:layout_below="@+id/buttonOk"
-        android:layout_centerHorizontal="true" />
+        android:layout_toLeftOf="@+id/imageView2"
+        android:layout_toStartOf="@+id/imageView2" />
+
+    <Button
+        android:id="@+id/buttonleitura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar Senha"
+        android:onClick="leitura"
+        android:layout_alignBaseline="@+id/buttonescrita"
+        android:layout_alignBottom="@+id/buttonescrita"
+        android:layout_toRightOf="@+id/imageView2"
+        android:layout_toEndOf="@+id/imageView2" />
 
 </RelativeLayout>
